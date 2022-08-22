@@ -1,0 +1,26 @@
+{
+    "name": "ADV NONE",
+    "version": "0.0.0.1",
+    "manifest_version": 3,
+    "description": "We can hide all advertisements.",
+    "icons": {
+        "16": "icons/stop-sign16x16.png",
+        "32": "icons/stop-sign32x32.png",
+        "64": "icons/stop-sign64x64.png",
+        "128": "icons/stop-sign128x128.png"
+    },
+    "action": {
+        "default_popup": "popup/popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "declarativeNetRequest",
+        "declarativeNetRequestFeedback",
+        "scripting"
+    ],
+    "host_permissions": ["<all_urls>"]
+}
