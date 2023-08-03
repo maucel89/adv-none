@@ -11,9 +11,15 @@ try {
   )
     .then((r) => r.text())
     .then((text) => {
-      const blockUrls = text
-        .split("\n")
-        .filter((s) => s !== "" && !s.startsWith("!") && !s.startsWith("["));
+      const blockUrls = text.split("\n").filter(
+        (s) =>
+          s !== "" &&
+          !s.startsWith("!") &&
+          !s.startsWith("[") &&
+          // NEW RELIC
+          s !== "||js-agent.newrelic.com^" &&
+          s !== "||nr-data.net^"
+      );
 
       //var blockUrls = ["||googlesyndication.com^"];
       //console.log(blockUrls);
